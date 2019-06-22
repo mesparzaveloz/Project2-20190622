@@ -22,12 +22,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mesparzaveloz/Project2-20190622"
+        "url": "git+https://dashboard.heroku.com/apps/radiant-wildwood-70796"
     },
     "author": "M Esparza",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/mesparzaveloz/Project2-20190622"
+        "url": "https://dashboard.heroku.com/apps/radiant-wildwood-70796"
     },
-    "homepage": "https://github.com/mesparzaveloz/Project2-20190622"
+    "homepage": "https://dashboard.heroku.com/apps/radiant-wildwood-70796"
 }
