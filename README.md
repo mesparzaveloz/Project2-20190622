@@ -4,7 +4,7 @@ ITESM Coding Boot Camp - Project 2
 # movieCollector
 This application serves as a personal media library to keep track of movies user would like to watch, as well as the list of ones already watched.
 
-Direct link to app: https://pure-waters-38367.herokuapp.com
+Direct link to app: https://radiant-wildwood-70796.herokuapp.com
 
 ## Home page 
 ![SQL file](/public/assets/images/MovieCollector1.PNG)
