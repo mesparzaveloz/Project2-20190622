@@ -1,6 +1,8 @@
 // Import Sequelize library for `Sequelize.literal`.
 var Sequelize = require('sequelize');
 
+const DIALECT = 'mysql';
+
 module.exports = function(sequelize, DataTypes) {
     var Movie = sequelize.define('Movie', {
         id: {
