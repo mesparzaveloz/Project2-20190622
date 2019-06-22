@@ -21,7 +21,7 @@ app.set('view engine', 'handlebars');
 
 // Favicon
 console.log("antes de favicon");
-app.use(favicon(path.join(__dirname, 'public/assets/images', 'favicon.png')));
+app.use(favicon(path.join(__dirname, 'public/assets/images', 'favicon.ico')));
 console.log("después de favicon");
 
 // Body Parser
