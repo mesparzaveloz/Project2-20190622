@@ -1,47 +1,41 @@
-require("dotenv").config();
-var express = require("express");
-var exphbs = require("express-handlebars");
+// Import dependencies.
+var express = require('express');
+var path = require('path');
+var exphbs = require('express-handlebars');
+var favicon = require('serve-favicon');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var db = require('./models');
 
-var db = require("./models");
-
+// Initialize app.
 var app = express();
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(path.join(__dirname, 'public')));
+
 var PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static("public"));
+// Set handlebars as view engine.
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// Favicon
+app.use(favicon(path.join(__dirname, 'public/assets/images', 'favicon.png')));
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// Body Parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-var syncOptions = { force: false };
+// Method override.
+app.use(methodOverride('_method'));
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
+// Import routes and give the server access to them.
+var routes = require('./controllers/movie_controller.js');
+app.use('/', routes);
 
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+// Start listening.
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+        console.log('listening on port ' + PORT);
+    });
 });
-
-module.exports = app;

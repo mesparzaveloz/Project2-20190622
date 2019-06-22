@@ -1,31 +1,33 @@
 {
-  "name": "Project2-20190622",
-  "version": "1.0.0",
-  "description": "Project2-20190622",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "lint": "eslint --quiet .",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
-  },
-  "license": "ISC",
-  "author": "M Esparza",
-  "dependencies": {
-    "dotenv": "^8.0.0",
-    "express": "^4.17.0",
-    "express-handlebars": "^3.1.0",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.8.6"
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "cross-env": "^5.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "mocha": "^6.1.4",
-    "prettier": "^1.17.1"
-  }
+    "name": "MovieCollector",
+    "version": "1.0.0",
+    "description": "A full-stack web application built in Node, Express, and MySQL.",
+    "main": "server.js",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
+        "method-override": "^2.3.10",
+        "mysql": "^2.17.1",
+        "mysql2": "^1.6.5",
+        "omdb": "^0.8.0",
+        "request": "^2.88.0",
+        "sequelize": "^6.0.0",
+        "serve-favicon": "^2.5.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mesparzaveloz/Project2-20190622"
+    },
+    "author": "mchlltt",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mesparzaveloz/Project2-20190622"
+    },
+    "homepage": "https://github.com/mesparzaveloz/Project2-20190622"
 }
