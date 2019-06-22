@@ -19,11 +19,11 @@ Movie fan can label the movie as “watched” or remove it from the list.
 
 ### Technologies used:
 
-MySQL (RDBMS)
+MySQL
 
 Node.js (Javascript environment)
 
-Sequelize (ORMBootstrap 4 (Front-end framework)
+Sequelize (ORM)
 
 Express.js (Server framework)
 
@@ -34,6 +34,8 @@ Cards, Modal
 Heroku (Cloud platform)
 
 JawsDB (Heroku database add-on)
+
+Bootstrap 4
 
 ## Author
 Marcelino Esparza @ 2019
